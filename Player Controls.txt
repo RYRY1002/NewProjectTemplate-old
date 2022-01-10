@@ -1,0 +1,9 @@
+Mouse Movement - Look Around
+WASD - Movement
+
+V - Change Camera
+
+Left Click whilst looking at actor with Physics - Picks up actor
+Right Click whilst looking at actor with Physics - Pokes actor
+Left Click whilst holding an actor with Physics - Drops actor
+Right Click whilst holding an actor with Physics - Throws actor
