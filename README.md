@@ -115,6 +115,17 @@ The main level is located in `Game/Level.uasset`.
 * `SmallActors`
   - Used for small actors (such as trashbags, rubbish decals, etc)
 
+## Day/Night cycle system
+The day/night cycle is controlled via the level blueprint and `DayNightBoolean_Actor`.
+
+The level blueprint is what actually rotates the directional lights, `DayNightBoolean_Actor` tells other actors whether it is day or night. (This is useful for example with streetlamps. By accessing the Boolean in `DayNightBoolean_Actor`, the streetlamp can be turned on and off depending on whether it is day or night).
+
+### Examples of Day/Night cycle system
+
+An example of such a streetlight is provided in `Game/Blueprints/Examples/DayNightLight.uasset`. (When placing this blueprint, make sure to select the `DayNightBoolean_Actor` from the details panel)
+
+Another example of the Day/Night cycle system in use is the `DayOff-NightOn_LightFunction` file found in `Game/Materials/ExampleMaterials`.
+
 ## Player
 
 ### Player controls
