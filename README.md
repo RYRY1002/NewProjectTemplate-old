@@ -21,6 +21,9 @@ Master Materials can be located in `Game/Materials`.
 * `decal_material`
   - This material should be used for regular decals
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
+* `decal_material_stain`
+  - This material should be used for decals that are stains (such as puddles, dirt, blood, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
 * `blend_material_2`
   - This material should be used for surfaces
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
@@ -45,7 +48,7 @@ Material Functions can be located in `Game/Materials/Functions`.
 
 * `MF_MapAdjustments`
   - Adds configuration options
-  - Used in `surface_material` and `decal_material`
+  - Used in `surface_material`, `decal_material` and `decal_material_stain`
 * `MF_MapAdjustments_1`
   - Adds configuration options
   - Used in `blend_material_2` and `blend_material_3`
@@ -57,10 +60,10 @@ Material Functions can be located in `Game/Materials/Functions`.
   - Used in `blend_material_2` and `blend_material_3`
 * `MF_Tiling_CustomUVs`
   - Adds custom tiling options
-  - Used in `surface_material`, `decal_material`, `blend_material_2` and `blend_material_3`
+  - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
 * `MF_Tiling_StretchingFix`
   - Applys a fix for stretched textures
-  - Used in `surface_material`, `decal_material`, `blend_material_2` and `blend_material_3`
+  - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
 * `Rain`
   - Adds a basic rain effect
   - Used in `surface_material`, `blend_material_2` and `blend_material_3`
@@ -87,7 +90,7 @@ Textures can be located in `Game/Materials/Textures`.
   - Contains Moon texture
 * `Placeholders` folder
   - Contains placeholder textures
-  - Used in `surface_material`, `decal_material`, `blend_material_2` and `blend_material_3`
+  - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
 
 ## Blueprints
 Blueprints can be located in `Game/Blueprints`.
