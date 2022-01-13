@@ -10,6 +10,15 @@ A template for new projects in Unreal Engine 5.
 4. Open Unreal Engine 5.0.0 Early Access 2 and open the project
 5. Done
 
+## Updating existing projects
+If you have a project that already uses this template, but you'd like to update it with new master materials and such,
+
+1. Download the new version
+2. Go into the `Content` folder and copy whatever you'd like to update.
+3. Replace the old files with the new ones.
+
+The shaders will need to recompile (~250 shaders), but once that's done, everything should just work.
+
 ## Materials
 
 ### Master Materials
