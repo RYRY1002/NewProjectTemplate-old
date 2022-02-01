@@ -99,19 +99,33 @@ Textures can be located in `Game/Materials/Textures`.
 
 * `DirtMask` folder
   - Contains Lens Dirt textures
-* `moon` folder
+* `Moon` folder
   - Contains Moon texture
 * `Placeholders` folder
   - Contains placeholder textures
   - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
 
+### Post Process Materials
+Post Process Materials can be located in `Game/Materials/PostProcess` 
+
+* `Fisheye`
+  - Basic fisheye effect
+  - Used in `Game/Player/Blueprints/PlayerCharacter.uasset` whilst in Third Person
+
+### UI Materials
+UI Materials can be located in `Game/Materials/UI`
+
+* `FisheyeUI`
+  - Same basic fisheye effect as in `Game/Player/Materials/Fisheye.uasset` but converted to work with UIs
+  - Used in `Game/Player/UI/Physics_WidgetHUD.uasset`
+
 ## Blueprints
 Blueprints can be located in `Game/Blueprints`.
 
 ### DayNightCycle folder
-* `DayNightBoolean_Actor`
-  - Gives the `SunMoon_Rotations` Material Parameter Collection the Sun and Moon's rotations
-* `Moon_BP`
+* `DayNightManager`
+  - Gives other assets vital information about the Day/Night cycle
+* `Moon`
   - Fake Moon
 
 ### Spline_Movement folder
@@ -132,13 +146,13 @@ The main level is located in `Game/Level.uasset`.
   - Used for small actors (such as trashbags, rubbish decals, etc)
 
 ## Day/Night cycle system
-The day/night cycle is controlled via the level blueprint and `DayNightBoolean_Actor`.
+The day/night cycle is controlled via the level blueprint and `DayNightManger`.
 
-The level blueprint is what actually rotates the directional lights, `DayNightBoolean_Actor` tells other actors whether it is day or night. (This is useful for example with streetlamps. By accessing the Boolean in `DayNightBoolean_Actor`, the streetlamp can be turned on and off depending on whether it is day or night).
+The level blueprint is what actually rotates the directional lights, `DayNightManager` tells other actors whether it is day or night. (This is useful for example with streetlamps. By accessing the Boolean in `DayNightManager`, the streetlamp can be turned on and off depending on whether it is day or night).
 
 ### Examples of Day/Night cycle system
 
-An example of such a streetlight is provided in `Game/Blueprints/Examples/DayNightLight.uasset`. (When placing this blueprint, make sure to select the `DayNightBoolean_Actor` from the details panel)
+An example of such a streetlight is provided in `Game/Blueprints/Examples/DayNightLight.uasset`. (When placing this blueprint, make sure to select the `DayNightManager` from the details panel)
 
 Another example of the Day/Night cycle system in use is the `DayOff-NightOn_LightFunction` file found in `Game/Materials/ExampleMaterials`.
 
@@ -153,6 +167,13 @@ Another example of the Day/Night cycle system in use is the `DayOff-NightOn_Ligh
 * Right Click whilst looking at actor with Physics - Pokes actor
 * Left Click whilst holding an actor with Physics - Drops actor
 * Right Click whilst holding an actor with Physics - Throws actor
+
+### UI
+The HUD that the player sees can be configured by opening `Game/Player/UI/PhysicsUI.uasset`.
+
+The HUD uses the Inverted Fisheye effect, so if you want to disable that, just click on the retainer box and set the effect material to nothing.
+
+Additional things can be configured by opening `Game/Player/UI/UI.uasset`.
 
 ## Project Settings
 
