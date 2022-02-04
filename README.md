@@ -2,13 +2,18 @@
 A template for new projects in Unreal Engine 5.
 
 ## Installation
+### Project Installation
 1. Download the project
    - Downloads in the releases page are polished, final releases
    - Download the repository as a .zip or clone it for the most up to date version, but it may have bugs
 2. Extract the .zip file
-3. Copy the files to wherever you keep your Unreal projects
+3. Copy the files to wherever you keep your Unreal Engine projects
 4. Open Unreal Engine 5.0.0 Early Access 2 and open the project
 5. Done
+
+### Pre-compiled Shaders Installation (Still testing)
+1. Download the pre-compiled shaders from the latest release *(pre-compiled shaders will only be updated with new releases)*
+2. Copy/Move the `Common` folder and place it in `C:\Users\<user>\AppData\Local\UnrealEngine`
 
 ## Updating existing projects
 If you have a project that already uses this template, but you'd like to update it with new master materials and such,
@@ -20,7 +25,6 @@ If you have a project that already uses this template, but you'd like to update 
 The shaders will need to recompile (~250 shaders), but once that's done, everything should just work.
 
 ## Materials
-
 ### Master Materials
 Master Materials can be located in `Game/Materials`.
 
@@ -157,7 +161,6 @@ An example of such a streetlight is provided in `Game/Blueprints/Examples/DayNig
 Another example of the Day/Night cycle system in use is the `DayOff-NightOn_LightFunction` file found in `Game/Materials/ExampleMaterials`.
 
 ## Player
-
 ### Player controls
 
 * Mouse Movement - Look Around
@@ -176,7 +179,6 @@ The HUD uses the Inverted Fisheye effect, so if you want to disable that, just c
 Additional things can be configured by opening `Game/Player/UI/UI.uasset`.
 
 ## Project Settings
-
 ### Rendering
 
 * Uses Ray Traced GI
@@ -187,3 +189,6 @@ Additional things can be configured by opening `Game/Player/UI/UI.uasset`.
   - 3 Samples per pixel
 * Uses Ray Traced Shadows
   - Sun and Moon cast shadows with 5 samples per pixel, everything else has 1 sample per pixel.
+* Scene clearing is disabled by default
+  - This is slightly faster, but can cause artifacts if you have a transparent sky.
+  - Please disable if you notice any artifacts as a result of this setting.
