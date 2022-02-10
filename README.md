@@ -35,6 +35,10 @@ Master Materials can be located in `Game/Materials`.
   - This material should be used for small details (such as screws, bumps, cable ports, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
   - Has shadows disabled
+* `surface_material_masked`
+  - This material should be used for regular surfaces
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
+  - Has masked opacity
 * `decal_material`
   - This material should be used for regular decals
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
@@ -90,6 +94,9 @@ Material Functions can be located in `Game/Materials/Functions`.
 * `StretchingFix-XZ`
   - XY specific streching fix
   - Used in `MF_Tiling_StretchingFix`
+* `Wind`
+  - Adds options for Wind
+  - Used in `blend_material_2` and `blend_material_3`
 
 ### Parameter Collections
 Material Parameter Collections can be located in `Game/Materials/ParameterCollections`.
