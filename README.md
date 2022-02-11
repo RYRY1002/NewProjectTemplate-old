@@ -196,6 +196,3 @@ Additional things can be configured by opening `Game/Player/UI/UI.uasset`.
   - 3 Samples per pixel
 * Uses Ray Traced Shadows
   - Sun and Moon cast shadows with 5 samples per pixel, everything else has 1 sample per pixel.
-* Scene clearing is disabled by default
-  - This is slightly faster, but can cause artifacts if you have a transparent sky.
-  - Please disable if you notice any artifacts as a result of this setting.
