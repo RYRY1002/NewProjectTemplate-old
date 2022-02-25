@@ -8,7 +8,7 @@ A template for new projects in Unreal Engine 5.
    - Download the repository as a .zip or clone it for the most up to date version, but it may have bugs
 2. Extract the .zip file
 3. Copy the files to wherever you keep your Unreal Engine projects
-4. Open Unreal Engine 5.0.0 Early Access 2 and open the project
+4. Open Unreal Engine 5.0.0 Preview 1 and open the project
 5. Done
 
 ### Pre-compiled Shaders Installation
