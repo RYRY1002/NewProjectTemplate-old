@@ -159,32 +159,40 @@ Example Material Instances can be located in `Game/Materials/ExampleMaterials`.
 ### Material Functions
 Material Functions can be located in `Game/Materials/Functions`.
 
-* `MF_MapAdjustments`
-  - Adds configuration options
-  - Used in `surface_material`, `decal_material` and `decal_material_stain`
-* `MF_MapAdjustments_1`
-  - Adds configuration options
-  - Used in `blend_material_2` and `blend_material_3`
-* `MF_MapAdjustments_2`
-  - Adds configuration options
-  - Used in `blend_material_2` and `blend_material_3`
-* `MF_MapAdjustments_3`
-  - Adds configuration options
-  - Used in `blend_material_2` and `blend_material_3`
-* `MF_Tiling_CustomUVs`
+* `CustomUVs`
   - Adds custom tiling options
   - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
-* `MF_Tiling_StretchingFix`
-  - Applys a fix for stretched textures
-  - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
+* `MapAdjustments`
+  - Adds configuration options
+  - Used in `surface_material`, `decal_material` and `decal_material_stain`
+* `MapAdjustments1`
+  - Adds configuration options
+  - Used in `blend_material_2` and `blend_material_3`
+* `MapAdjustments2`
+  - Adds configuration options
+  - Used in `blend_material_2` and `blend_material_3`
+* `MapAdjustments3`
+  - Adds configuration options
+  - Used in `blend_material_2` and `blend_material_3`
+* `Opacity`
+  - Fix for `surface_material_masked` and `VT_surface_material_masked`
+* `POM`
+  - Adds Parallax Occlusion Mapping
+  - Used in all master materials
 * `Rain`
   - Adds a basic rain effect
   - Used in `surface_material`, `blend_material_2` and `blend_material_3`
+* `StretchingFix`
+  - Applys a fix for stretched textures
+  - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
 * `StretchingFix-XY`
   - XY specific streching fix
   - Used in `MF_Tiling_StretchingFix`
 * `StretchingFix-XZ`
   - XY specific streching fix
+  - Used in `MF_Tiling_StretchingFix`
+* `StretchingFix-YZ`
+  - YZ specific streching fix
   - Used in `MF_Tiling_StretchingFix`
 * `Wind`
   - Adds options for Wind
@@ -272,6 +280,9 @@ An example of such a streetlight is provided in `Game/Blueprints/Examples/DayNig
 
 Another example of the Day/Night cycle system in use is the `DayOff-NightOn_LightFunction` file found in `Game/Materials/ExampleMaterials`.
 
+## Particles
+Particles can be located in `Game/Content/Particles`.
+
 ## Player
 ### Player controls
 
@@ -282,6 +293,9 @@ Another example of the Day/Night cycle system in use is the `DayOff-NightOn_Ligh
 * Right Click whilst looking at actor with Physics - Pokes actor
 * Left Click whilst holding an actor with Physics - Drops actor
 * Right Click whilst holding an actor with Physics - Throws actor
+* R - Turn Ray Tracing On/Off
+* Esc - Pause
+* P - Pause
 
 ### UI
 The HUD that the player sees can be configured by opening `Game/Player/UI/PhysicsUI.uasset`.
@@ -289,6 +303,11 @@ The HUD that the player sees can be configured by opening `Game/Player/UI/Physic
 The HUD uses the Inverted Fisheye effect, so if you want to disable that, just click on the retainer box and set the effect material to nothing.
 
 Additional things can be configured by opening `Game/Player/UI/UI.uasset`.
+
+### Menus
+The menus can be found in `Game/Player/UI/MainMenu`, `Game/Player/UI/PauseMenu`, and `Game/Player/UI/LoadingScreen` respectively.
+
+All of the code inside the menus is extremely simple, and should not require explaining.
 
 ## Project Settings
 ### Rendering
