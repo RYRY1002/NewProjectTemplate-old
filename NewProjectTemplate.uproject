@@ -129,10 +129,6 @@
 			"Enabled": false
 		},
 		{
-			"Name": "VisualStudioCodeSourceCodeAccess",
-			"Enabled": false
-		},
-		{
 			"Name": "XCodeSourceCodeAccess",
 			"Enabled": false
 		},
@@ -230,14 +226,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "SpeedTreeImporter",
-			"Enabled": false
-		},
-		{
-			"Name": "AlembicImporter",
-			"Enabled": false
-		},
-		{
 			"Name": "GameFeatures",
 			"Enabled": true
 		},
@@ -301,6 +289,68 @@
 		},
 		{
 			"Name": "DatasmithRuntime",
+			"Enabled": true
+		},
+		{
+			"Name": "Bridge",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "NiagaraFluids",
+			"Enabled": true
+		},
+		{
+			"Name": "HairModelingToolset",
+			"Enabled": true
+		},
+		{
+			"Name": "GeometryScripting",
+			"Enabled": true
+		},
+		{
+			"Name": "AxFImporter",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "MDLImporter",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "USDImporter",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "PanoramicCapture",
+			"Enabled": true
+		},
+		{
+			"Name": "GeoReferencing",
+			"Enabled": true
+		},
+		{
+			"Name": "UVEditor",
+			"Enabled": true
+		},
+		{
+			"Name": "LightWeightInstancesEditor",
 			"Enabled": true
 		}
 	],

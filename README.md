@@ -8,7 +8,7 @@ A template for new projects in Unreal Engine 5.
    - Download the repository as a .zip or clone it for the most up to date version, but it may have bugs
 2. Extract the .zip file
 3. Copy the files to wherever you keep your Unreal Engine projects
-4. Open Unreal Engine 5.0.0 Preview 1 and open the project
+4. Open Unreal Engine 5.0.0 Preview 2 and open the project
 5. Done
 
 ### Pre-compiled Shaders Installation
@@ -25,88 +25,124 @@ If you have a project that already uses this template, but you'd like to update 
 The shaders will need to recompile (~250 shaders), but once that's done, everything should just work.
 
 ## Materials
+### Material Layer Assets
+All base Material Layer assets can be located in `Game/Materials/_Layers`.
+
+* `MasterBlends/Normal/blend-mask`
+  - Uses a mask to blend between layers
+* `MasterBlends/Normal/blend-procedural`
+  - Uses perlin noise, lerps and height maps to blend between layers
+* `MasterLayers/Normal/surface`
+  - This layer asset should be used for regular surfaces
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
+* `MasterLayers/Normal/surface_additive`
+  - This layer asset should be used for things that are added to the scene (such as fire, steam, holograms, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
+  - Uses additive blend mode
+* `MasterLayers/Normal/surface_masked`
+  - This layer asset should be used for things that are either transparent or opaque (such as fences, chains, grates, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
+  - Uses masked blend mode
+* `MasterLayers/Normal/surface_translucent`
+  - This layer asset should be used for things that are partially transparent (such as glass panes, bottles, water, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
+  - Uses translucent blend mode
+
+* `MasterBlends/VT/blend-mask`
+  - Uses a mask to blend between layers
+  - Uses virtual textures
+* `MasterBlends/VT/blend-procedural`
+  - Uses perlin noise, lerps and height maps to blend between layers
+  - Uses virtual textures
+* `MasterLayers/VT/surface`
+  - This layer asset should be used for regular surfaces
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
+  - Uses virtual textures
+* `MasterLayers/VT/surface_additive`
+  - This layer asset should be used for things that are added to the scene (such as fire, steam, holograms, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
+  - Uses additive blend mode
+  - Uses virtual textures
+* `MasterLayers/VT/surface_masked`
+  - This layer asset should be used for things that are either transparent or opaque (such as fences, chains, grates, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
+  - Uses masked blend mode
+  - Uses virtual textures
+* `MasterLayers/VT/surface_translucent`
+  - This layer asset should be used for things that are partially transparent (such as glass panes, bottles, water, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
+  - Uses translucent blend mode
+  - Uses virtual textures
+
 ### Master Materials
 Master Materials can be located in `Game/Materials/_MasterMaterials`.
 
 * `Normal/surface_material`
-  - This material should be used for regular surfaces
+  - This material be used for regular surfaces
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
 * `Normal/surface_material_additive`
-  - This material should be used for small details (such as screws, bumps, cable ports, etc.)
+  - This material asset should be used for things that are added to the scene (such as fire, steam, holograms, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
-  - Has shadows disabled
+  - Uses additive blend mode
 * `Normal/surface_material_masked`
-  - This material should be used for regular surfaces
+  - This material should be used for things that are either transparent or opaque (such as fences, chains, grates, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
-  - Has masked opacity
+  - Uses masked blend mode
 * `Normal/surface_material_translucent`
-  - This material should be used for transluccent materials (glass, bottles, etc.)
+  - This material should be used for things that are partially transparent (such as glass panes, bottles, water, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
-  - Is translucent
+  - Uses translucent blend mode
 * `Normal/decal_material`
   - This material should be used for regular decals
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
+* `Normal/decal_material_modulating`
+  - This material should be used for decals that are added to the scene, but need shadowing (such as screws, cable ports, braille, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
+  - Uses modulate blend mode
 * `Normal/decal_material_stain`
   - This material should be used for decals that are stains (such as puddles, dirt, blood, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
-* `Normal/blend_material_2`
-  - This material should be used for surfaces
-  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
-  - It also supports `HeightLerp`ing between two indentical instances of `surface_material`
-* `Normal/blend_material_3`
-  - This material should be used for surfaces
-  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
-  - It also supports `HeightLerp`ing between three indentical instances of `surface_material`
 
 * `VT/VT_surface_material`
   - This material should be used for regular surfaces
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
   - Uses virtual textures
 * `VT/VT_surface_material_additive`
-  - This material should be used for small details (such as screws, bumps, cable ports, etc.)
+  - This material should be used for things that are added to the scene (such as fire, steam, holograms, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
-  - Has shadows disabled
+  - Uses additive blend mode
   - Uses virtual textures
 * `VT/VT_surface_material_masked`
-  - This material should be used for regular surfaces
+  - This material should be used for things that are either transparent or opaque (such as fences, chains, grates, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
-  - Has masked opacity
+  - Uses masked blend mode
   - Uses virtual textures
 * `VT/VT_surface_material_translucent`
-  - This material should be used for transluccent materials (glass, bottles, etc.)
+  - This material should be used for things that are partially transparent (such as glass panes, bottles, water, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
-  - Is translucent
+  - Uses translucent blend mode
   - Uses virtual textures
 * `VT/VT_decal_material`
   - This material should be used for regular decals
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
   - Uses virtual textures
+* `Normal/decal_material_modulating`
+  - This material should be used for decals that are added to the scene, but need shadowing (such as screws, cable ports, braille, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
+  - Uses modulate blend mode
+  - Uses virtual textures
 * `VT/VT_decal_material_stain`
   - This material should be used for decals that are stains (such as puddles, dirt, blood, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
-  - Uses virtual textures
-* `VT/VT_blend_material_2`
-  - This material should be used for surfaces
-  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
-  - It also supports `HeightLerp`ing between two indentical instances of `surface_material`
-  - Uses virtual textures
-* `VT/VT_blend_material_3`
-  - This material should be used for surfaces
-  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
-  - It also supports `HeightLerp`ing between three indentical instances of `surface_material`
   - Uses virtual textures
 
 ### Example Material Instances
 Example Material Instances can be located in `Game/Materials/ExampleMaterials`.
 
-* `blend-material_2_example`
-  - Shows an example of a typical instance of `blend-material_2`
-  - Instance of `blend-material_2`
-* `blend-material_3_example`
-  - Shows an example of a typical instance of `blend-material_3`
-  - Instance of `blend-material_3`
 * `DayOff-NightOn_LightFunction`
   - Shows an example of a light function taking advantage of the project's Day/Night time cycle
+* `layer_example`
+  - Shows an example of material layers being used
 * `VT_surface_material_example_earth_day`
   - Shows a fully configured Earth intstance
   - Instance of `VT_surface_material`
@@ -159,21 +195,14 @@ Example Material Instances can be located in `Game/Materials/ExampleMaterials`.
 ### Material Functions
 Material Functions can be located in `Game/Materials/Functions`.
 
+* `BreakNormalFromHeight`
+  - This reverses the effect of the `StoreHeightInNormal` function 
 * `CustomUVs`
   - Adds custom tiling options
   - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
 * `MapAdjustments`
   - Adds configuration options
   - Used in `surface_material`, `decal_material` and `decal_material_stain`
-* `MapAdjustments1`
-  - Adds configuration options
-  - Used in `blend_material_2` and `blend_material_3`
-* `MapAdjustments2`
-  - Adds configuration options
-  - Used in `blend_material_2` and `blend_material_3`
-* `MapAdjustments3`
-  - Adds configuration options
-  - Used in `blend_material_2` and `blend_material_3`
 * `Opacity`
   - Fix for `surface_material_masked` and `VT_surface_material_masked`
 * `POM`
@@ -182,6 +211,8 @@ Material Functions can be located in `Game/Materials/Functions`.
 * `Rain`
   - Adds a basic rain effect
   - Used in `surface_material`, `blend_material_2` and `blend_material_3`
+* `StoreHeightInNormal`
+  - Appends the height map to the normal map.
 * `StretchingFix`
   - Applys a fix for stretched textures
   - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
@@ -259,7 +290,14 @@ Blueprints can be located in `Game/Blueprints`.
   - Spinning + Orbiting solar system
 
 ## Level
-The main level is located in `Game/Level.uasset`.
+Levels can be located in the main `Game` directory.
+
+* `Empty`
+  - As the name suggests, this level is empty.
+* `Level`
+  - This is the main level.
+* `MainMenu`
+  - This is the level featured in the main menu. It's the one with the sky.
 
 ### World Partition Grids
 * `Landscape`
