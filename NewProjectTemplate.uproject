@@ -198,10 +198,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "CommonUILayout",
-			"Enabled": true
-		},
-		{
 			"Name": "ImgMedia",
 			"Enabled": false
 		},
