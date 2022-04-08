@@ -8,7 +8,7 @@ A template for new projects in Unreal Engine 5.
    - Download the repository as a .zip or clone it for the most up to date version, but it may have bugs
 2. Extract the .zip file
 3. Copy the files to wherever you keep your Unreal Engine projects
-4. Open Unreal Engine 5.0.0 Preview 2 and open the project
+4. Open Unreal Engine 5.0.0 and open the project
 5. Done
 
 ### Pre-compiled Shaders Installation
@@ -126,7 +126,7 @@ Master Materials can be located in `Game/Materials/_MasterMaterials`.
   - This material should be used for regular decals
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
   - Uses virtual textures
-* `Normal/decal_material_modulating`
+* `VT/VT_decal_material_modulating`
   - This material should be used for decals that are added to the scene, but need shadowing (such as screws, cable ports, braille, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, Opacity, POM and various tiling methods
   - Uses modulate blend mode
@@ -195,39 +195,46 @@ Example Material Instances can be located in `Game/Materials/ExampleMaterials`.
 ### Material Functions
 Material Functions can be located in `Game/Materials/Functions`.
 
+* `ApplyUVsLayers`
+  - Applies UVs to layered materials
 * `BreakNormalFromHeight`
   - This reverses the effect of the `StoreHeightInNormal` function 
-* `CustomUVs`
-  - Adds custom tiling options
-  - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
 * `MapAdjustments`
   - Adds configuration options
-  - Used in `surface_material`, `decal_material` and `decal_material_stain`
+  - Used in all materials
 * `Opacity`
   - Fix for `surface_material_masked` and `VT_surface_material_masked`
 * `POM`
   - Adds Parallax Occlusion Mapping
   - Used in all master materials
-* `Rain`
-  - Adds a basic rain effect
-  - Used in `surface_material`, `blend_material_2` and `blend_material_3`
 * `StoreHeightInNormal`
   - Appends the height map to the normal map.
-* `StretchingFix`
-  - Applys a fix for stretched textures
-  - Used in `surface_material`, `decal_material`, `decal_material_stain`, `blend_material_2` and `blend_material_3`
-* `StretchingFix-XY`
-  - XY specific streching fix
-  - Used in `MF_Tiling_StretchingFix`
-* `StretchingFix-XZ`
-  - XY specific streching fix
-  - Used in `MF_Tiling_StretchingFix`
-* `StretchingFix-YZ`
-  - YZ specific streching fix
-  - Used in `MF_Tiling_StretchingFix`
+* `T2DtoFloat`
+  - Converts a texture object to a float
+* `UVs`
+  - UV solution
 * `Wind`
   - Adds options for Wind
   - Used in `blend_material_2` and `blend_material_3`
+* `WorldAlignedTexture`
+  - Function used for perfect scaling
+  - Slightly modified version of `Engine\Content\Functions\Engine_MaterialFunctions01\Texturing\WorldAlignedTexture`
+
+* `OldUVs` folder
+  - Filled with an old UV solution
+  - Deprecated, use `UVs` function instead
+* `Rain\oldRain`
+  - Rain solution
+  - Deprecated, use `Rain\Rain` function instead
+* `Rain\oldRain` folder
+  - Filled with functions and textures used in the `oldRain` function
+  - Deprecated, use `Rain\Rain` function instead
+* `Rain\Rain`
+  - Rain solution
+* `Rain\SubFunctions` folder
+  - Functions used in the `Rain\Rain` function
+* `Rain\Textures` folder
+  - Textures used in the `Rain\Rain` function
 
 ### Parameter Collections
 Material Parameter Collections can be located in `Game/Materials/ParameterCollections`.
@@ -235,17 +242,21 @@ Material Parameter Collections can be located in `Game/Materials/ParameterCollec
 * `SunMoon_Rotations`
   - Contains rotation values for the Sun and Moon
   - Used in `DayOff-NightOn_LightFunction`
+* `GlobalRainValues`
+  - Contains values used in rain functions
 
 ### Textures
 Textures can be located in `Game/Materials/Textures`.
 
 * `DirtMask` folder
   - Contains Lens Dirt textures
+* `LensFlares`
+  - Contains a bunch of lens flares that you might want to use
 * `Moon` folder
   - Contains Moon texture
 * `Placeholders` folder
   - Contains placeholder textures
-  - Used in all master materials
+  - Used in all materials
 
 ### Post Process Materials
 Post Process Materials can be located in `Game/Materials/PostProcess` 
@@ -293,11 +304,11 @@ Blueprints can be located in `Game/Blueprints`.
 Levels can be located in the main `Game` directory.
 
 * `Empty`
-  - As the name suggests, this level is empty.
+  - As the name suggests, this level is empty
 * `Level`
-  - This is the main level.
+  - This is the main level
 * `MainMenu`
-  - This is the level featured in the main menu. It's the one with the sky.
+  - This is the level featured in the main menu. It's the one with the sky
 
 ### World Partition Grids
 * `Landscape`
