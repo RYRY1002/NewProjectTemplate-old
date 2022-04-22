@@ -15,6 +15,15 @@ A template for new projects in Unreal Engine 5.
 1. Download the pre-compiled shaders from the latest release *(pre-compiled shaders will only be updated with new releases)*
 2. Copy/Move the `Common` folder and place it in `C:\Users\<user>\AppData\Local\UnrealEngine`
 
+### Recommended plugins
+If any of these plugins are not present, you will be prompted to disable them at launch.
+You may need to recompile shaders if you choose to do this.
+
+* NVIDIA DLSS/IS
+  - Real time, AI powered image upscaling
+  - Can be downloaded from https://developer.nvidia.com/rtx/ray-tracing/dlss/get-started#ue-version
+  - Install to Engine\Plugins\Marketplace
+
 ## Updating existing projects
 If you have a project that already uses this template, but you'd like to update it with new master materials and such,
 
