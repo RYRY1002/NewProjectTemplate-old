@@ -1,0 +1,38 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1",
+	"FriendlyName": "HLSL Material",
+	"Description": "Create material functions directly in HLSL",
+	"Category": "Editor",
+	"CreatedBy": "Phyronnaz",
+	"CreatedByURL": "https://twitter.com/phyronnaz",
+	"DocsURL": "https://github.com/Phyronnaz/HLSLMaterial",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/871a7ec4baca4220a8a8a8422629f55e",
+	"SupportURL": "https://github.com/Phyronnaz/HLSLMaterial/issues",
+	"EngineVersion": "5.0.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "HLSLMaterialRuntime",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit",
+			"PlatformAllowList": [
+				"Win64",
+				"Linux",
+				"Mac"
+			]
+		},
+		{
+			"Name": "HLSLMaterialEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit",
+			"PlatformAllowList": [
+				"Win64",
+				"Linux",
+				"Mac"
+			]
+		}
+	]
+}
