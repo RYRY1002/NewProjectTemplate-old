@@ -5,24 +5,35 @@ A template for new projects in Unreal Engine 5.
 ### Project Installation
 1. Download the project
    - Downloads in the releases page are polished, final releases
-   - Download the repository as a .zip or clone it for the most up to date version, but it may have bugs
-2. Extract the .zip file
+   - Download the repository as a .7z or clone it for the most up to date version, but it may have bugs
+2. Extract the .7z/.zip file
 3. Copy the files to wherever you keep your Unreal Engine projects
-4. Open Unreal Engine 5.0.0 and open the project
+4. Open Unreal Engine 5.0.1 and open the project
 5. Done
 
 ### Pre-compiled Shaders Installation
 1. Download the pre-compiled shaders from the latest release *(pre-compiled shaders will only be updated with new releases)*
 2. Copy/Move the `Common` folder and place it in `C:\Users\<user>\AppData\Local\UnrealEngine`
 
-### Recommended plugins
+### Plugins
 If any of these plugins are not present, you will be prompted to disable them at launch.
 You may need to recompile shaders if you choose to do this.
+
+You may be prompted to recompile some plugins, this is required for the editor to start.
+This only needs to be done once.
 
 * NVIDIA DLSS/IS
   - Real time, AI powered image upscaling
   - Can be downloaded from https://developer.nvidia.com/rtx/ray-tracing/dlss/get-started#ue-version
   - Install to Engine\Plugins\Marketplace
+* GraphPrinter
+  - Makes it much easier to share graphs with other users
+  - Credit to https://github.com/Naotsun19B/GraphPrinter
+  - Comes pre-installed
+* HLSL Material
+  - Allows you to write materials in HLSL directly in the editor
+  - Credit to https://github.com/Phyronnaz/HLSLMaterial
+  - Comes pre-installed
 
 ## Updating existing projects
 If you have a project that already uses this template, but you'd like to update it with new master materials and such,
@@ -351,7 +362,6 @@ Particles can be located in `Game/Content/Particles`.
 * Right Click whilst looking at actor with Physics - Pokes actor
 * Left Click whilst holding an actor with Physics - Drops actor
 * Right Click whilst holding an actor with Physics - Throws actor
-* R - Turn Ray Tracing On/Off
 * Esc - Pause
 * P - Pause
 
@@ -367,14 +377,5 @@ The menus can be found in `Game/Player/UI/MainMenu`, `Game/Player/UI/PauseMenu`,
 
 All of the code inside the menus is extremely simple, and should not require explaining.
 
-## Project Settings
-### Rendering
-
-* Uses Ray Traced GI
-  - 2 Max bounces
-  - 6 Samples per pixel
-* Uses Ray Traced Reflections
-  - 4 Max bounces
-  - 1 Sample per pixel
-* Uses Ray Traced Shadows
-  - Sun and Moon cast shadows with 5 samples per pixel, everything else has 1 sample per pixel.
+There is also `Game/Player/UI/SettingsMenu`, the code inside this blueprint is somewhat complex.
+Luckily, you shouldn't need to edit it. You should only need to edit the design of the menu.
