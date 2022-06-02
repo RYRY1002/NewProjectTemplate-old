@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
-	"Version": 2,
-	"VersionName": "2.0",
+	"Version": 0,
+	"VersionName": "2.1",
 	"FriendlyName": "GraphPrinter",
 	"Description": "It is a plugin that adds a shortcut to output the graph editor to the image file and a shortcut to restore the node from the image file.",
 	"Category": "Editor",
@@ -15,7 +15,87 @@
 	"Installed": true,
 	"Modules": [
 		{
-			"Name": "GraphPrinter",
+			"Name": "GraphPrinterGlobals",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "WidgetPrinter",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "GenericGraphPrinter",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "ReferenceViewerPrinter",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "PreviewViewportPrinter",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "MaterialGraphPrinter",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "GraphPrinterEditorExtension",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "TextChunkHelper",
+			"Type": "EditorNoCommandlet",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "ClipboardImageExtension",
 			"Type": "EditorNoCommandlet",
 			"LoadingPhase": "Default",
 			"PlatformAllowList": [
