@@ -8,7 +8,7 @@ A template for new projects in Unreal Engine 5.
    - Download the repository as a .7z or clone it for the most up to date version, but it may have bugs
 2. Extract the .7z/.zip file
 3. Copy the files to wherever you keep your Unreal Engine projects
-4. Open Unreal Engine 5.0.1 and open the project
+4. Open Unreal Engine 5.0.2 and open the project
 5. Done
 
 ### Pre-compiled Shaders Installation
@@ -63,32 +63,39 @@ All base Material Layer assets can be located in `Game/Materials/_Layers`.
   - This layer asset should be used for things that are either transparent or opaque (such as fences, chains, grates, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
   - Uses masked blend mode
+* `MasterLayers/Normal/surface_subsurface`
+  - This material should be used for opaque materials where light bounces inside of them (such as wax, jade, skin, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Subsurface Amount, Subsurface Color and various tiling methods
 * `MasterLayers/Normal/surface_translucent`
   - This layer asset should be used for things that are partially transparent (such as glass panes, bottles, water, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
   - Uses translucent blend mode
 
-* `MasterBlends/VT/blend-mask`
+* `MasterBlends/VT/VT_blend-mask`
   - Uses a mask to blend between layers
   - Uses virtual textures
-* `MasterBlends/VT/blend-procedural`
+* `MasterBlends/VT/VT_blend-procedural`
   - Uses perlin noise, lerps and height maps to blend between layers
   - Uses virtual textures
-* `MasterLayers/VT/surface`
+* `MasterLayers/VT/VT_surface`
   - This layer asset should be used for regular surfaces
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
   - Uses virtual textures
-* `MasterLayers/VT/surface_additive`
+* `MasterLayers/VT/VT_surface_additive`
   - This layer asset should be used for things that are added to the scene (such as fire, steam, holograms, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, and various tiling methods
   - Uses additive blend mode
   - Uses virtual textures
-* `MasterLayers/VT/surface_masked`
+* `MasterLayers/VT/VT_surface_masked`
   - This layer asset should be used for things that are either transparent or opaque (such as fences, chains, grates, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
   - Uses masked blend mode
   - Uses virtual textures
-* `MasterLayers/VT/surface_translucent`
+* `MasterLayers/VT/VT_surface_subsurface`
+  - This material should be used for opaque materials where light bounces inside of them (such as wax, jade, skin, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Subsurface Amount, Subsurface Color and various tiling methods
+  - Uses virtual textures
+* `MasterLayers/VT/VT_surface_translucent`
   - This layer asset should be used for things that are partially transparent (such as glass panes, bottles, water, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
   - Uses translucent blend mode
@@ -108,6 +115,9 @@ Master Materials can be located in `Game/Materials/_MasterMaterials`.
   - This material should be used for things that are either transparent or opaque (such as fences, chains, grates, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
   - Uses masked blend mode
+* `Normal/surface_material_subsurface`
+  - This material should be used for opaque materials where light bounces inside of them (such as wax, jade, skin, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Subsurface Amount, Subsurface Color and various tiling methods
 * `Normal/surface_material_translucent`
   - This material should be used for things that are partially transparent (such as glass panes, bottles, water, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
@@ -137,6 +147,10 @@ Master Materials can be located in `Game/Materials/_MasterMaterials`.
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
   - Uses masked blend mode
   - Uses virtual textures
+* `VT/VT_surface_material_subsurface`
+  - This material should be used for opaque materials where light bounces inside of them (such as wax, jade, skin, etc.)
+  - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Subsurface Amount, Subsurface Color and various tiling methods
+  - Uses virtual textures
 * `VT/VT_surface_material_translucent`
   - This material should be used for things that are partially transparent (such as glass panes, bottles, water, etc.)
   - It supports Albedo, Metallic, Specular, Roughness, Emissive, Normal, AO, POM, Opacity and various tiling methods
@@ -163,54 +177,6 @@ Example Material Instances can be located in `Game/Materials/ExampleMaterials`.
   - Shows an example of a light function taking advantage of the project's Day/Night time cycle
 * `layer_example`
   - Shows an example of material layers being used
-* `VT_surface_material_example_earth_day`
-  - Shows a fully configured Earth intstance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_earth_night`
-  - Shows a fully configured Earth instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_translucent_example_earth_clouds`
-  - Shows a fully configured Earth cloud system
-  - Instance of `VT_surface_material_translucent`
-* `VT_surface_material_example_jupiter`
-  - Shows a fully configured Jupiter instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_mars`
-  - Shows a fully configured Mars instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_mercury`
-  - Shows a fully configured Mercury instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_moon`
-  - Shows a fully configured Moon instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_neptune`
-  - Shows a fully configured Neptune instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_saturn`
-  - Shows a fully configured Saturn instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_translucent_example_saturn_rings`
-  - Shows a fully configured Saturn Rings instance
-  - Instance of `VT_surface_material_translucent`
-* `VT_surface_material_example_stars`
-  - Shows a fully configured Stars instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_stars_milky_way`
-  - Shows a fully configured Stars with Milky Way instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_sun`
-  - Shows a fully configured Sun instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_uranus`
-  - Shows a fully configured Uranus instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_example_venus_surface`
-  - Shows a fully configured Venus Surface instance
-  - Instance of `VT_surface_material`
-* `VT_surface_material_translucent_example_venus_atmosphere`
-  - Shows a fully configured Venus Atmosphere instance
-  - Instance of `VT_surface_material_translucent`
 
 ### Material Functions
 Material Functions can be located in `Game/Materials/Functions`.
@@ -312,13 +278,11 @@ Blueprints can be located in `Game/Blueprints`.
   - Controls weather across various assets
 
 ### Example folder
-* `DayNightLight`
-  - Light that turns on at night, and off during the day.
-  - Light contains various performance optimizations.
-* `Earth+Lighting`
-  - Spinning Earth + Lighting
-* `SolarSystem`
-  - Spinning + Orbiting solar system
+* `DayNightLight1`
+  - Light that turns on at night, and off during the day
+  - Light contains various performance optimizations
+* `DayNightLight2`
+  - Same as `DayNightLight1` except with 2 lights
 
 ## Level
 Levels can be located in the main `Game` directory.
