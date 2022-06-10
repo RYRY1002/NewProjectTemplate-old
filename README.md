@@ -343,3 +343,14 @@ All of the code inside the menus is extremely simple, and should not require exp
 
 There is also `Game/Player/UI/SettingsMenu`, the code inside this blueprint is somewhat complex.
 Luckily, you shouldn't need to edit it. You should only need to edit the design of the menu.
+
+## Cinematics
+In order to get up and running with rendering cinematics, make sure to
+
+1) Download [ffmpeg](https://ffmpeg.org/download.html)
+2) Go to Project Settings > Plugins > Movie Pipeline CLI Encoder and set "Executable Path" to `bin\ffmpeg.exe` in the .zip you download in the prior step
+3) If you have a GPU that isn't capable of using NVENC, replace "Video Codec" with "`libx264`"
+
+When ready to actually render the cinematics, load the preset "`MovieRenderQueueSettings`" located in `Game/Cinematics`.
+
+If you're unsure how to use the Movie Render Queue feature, please read the [official documentation](https://docs.unrealengine.com/5.0/render-cinematics-in-unreal-engine/).
