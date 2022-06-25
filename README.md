@@ -1,6 +1,8 @@
 # NewProjectTemplate
 A template for new projects in Unreal Engine 5.
 
+![](https://img.shields.io/github/downloads/RYRY1002/NewProjectTemplate/total) ![](https://img.shields.io/github/commit-activity/m/RYRY1002/NewProjectTemplate) ![](https://img.shields.io/github/license/RYRY1002/NewProjectTemplate) ![](https://img.shields.io/github/issues/RYRY1002/NewProjectTemplate) ![](https://img.shields.io/github/v/release/RYRY1002/NewProjectTemplate?include_prereleases) ![](https://img.shields.io/github/repo-size/RYRY1002/NewProjectTemplate) ![](https://img.shields.io/github/stars/RYRY1002/NewProjectTemplate) ![](https://img.shields.io/github/contributors/RYRY1002/NewProjectTemplate)
+
 ## Installation
 ### Project Installation
 1. Download the project
